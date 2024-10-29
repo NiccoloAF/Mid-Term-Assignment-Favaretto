@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT XML (msDesc)>
+<!ELEMENT msDesc (msIdentifier, msContents, origin, physDesc, history)>
+<!ELEMENT msIdentifier (settlement, repository, idno, altIdentifier)>
+<!ELEMENT settlement (#PCDATA)>
+<!ELEMENT repository (#PCDATA)>
+<!ELEMENT idno (#PCDATA)>
+<!ELEMENT altIdentifier (idno+)>
+<!ELEMENT msContents (msItem+, textLang)>
+<!ELEMENT msItem (author+, title+)>
+<!ATTLIST msItem n CDATA #REQUIRED>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT textLang (#PCDATA)>
+<!ELEMENT origin (origDate, origPlace)>
+<!ELEMENT origDate (#PCDATA)>
+<!ATTLIST origDate notAfter CDATA #REQUIRED> 
+<!ATTLIST origDate notBefore CDATA #REQUIRED>
+<!ELEMENT origPlace (#PCDATA)>
+<!ELEMENT physDesc (objectDesc, bindingDesc, handDesc)>
+<!ELEMENT objectDesc (supportDesc, layoutDesc)>
+<!ATTLIST objectDesc form CDATA #REQUIRED>
+<!ELEMENT supportDesc (support, features, extent, foliation, condition, collation)>
+<!ATTLIST supportDesc material CDATA #REQUIRED>
+<!ELEMENT support (#PCDATA)>
+<!ELEMENT features (#PCDATA)>
+<!ELEMENT extent (material, dimensions)>
+<!ELEMENT material (#PCDATA)>
+<!ELEMENT dimensions (height, width)>
+<!ATTLIST dimensions unit CDATA #REQUIRED>
+<!ELEMENT height (#PCDATA)>
+<!ELEMENT width (#PCDATA)>
+<!ELEMENT foliation (#PCDATA)>
+<!ELEMENT condition (#PCDATA)>
+<!ELEMENT collation (catchwords)>
+<!ELEMENT catchwords (#PCDATA)>
+<!ELEMENT layoutDesc (layout)>
+<!ELEMENT layout (#PCDATA)>
+<!ELEMENT bindingDesc (binding)>
+<!ELEMENT binding (#PCDATA)>
+<!ELEMENT handDesc (handNote)>
+<!ATTLIST handDesc hands CDATA #REQUIRED>
+<!ELEMENT handNote (#PCDATA)>
+<!ELEMENT history (provenance+)>
+<!ELEMENT provenance (stamp+)>
+<!ELEMENT stamp (#PCDATA)>
